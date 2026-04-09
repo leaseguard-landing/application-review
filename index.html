@@ -1,539 +1,198 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeasePro Post Application</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-export default function LeaseProPostApplicationLandingPage() {
-  const colors = {
-    navy: "#0B2454",
-    navySoft: "#15356F",
-    gold: "#E0B323",
-    mist: "#F3F6FA",
-    border: "#D9E1EC",
-    text: "#1E2A3B",
-    muted: "#5E6B7F",
-    white: "#FFFFFF",
-  };
+  <style>
+    @media (min-width: 1024px) {
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+      .benefits-grid { grid-template-columns: 1fr 0.95fr; }
+      .cta-grid { grid-template-columns: 1.15fr 0.85fr; }
+    }
+  </style>
+</head>
 
-  const cards = [
-    {
-      title: "Tenant Legal Liability",
-      body:
-        "LeasePro is a tenant legal liability program that helps property owners and managers protect against unit-level property damage during occupancy.",
-    },
-    {
-      title: "Flexible Coverage Options",
-      body:
-        "$100,000–$300,000 in tenant legal liability coverage for tenant-caused property damage, including fire, smoke, and water-related incidents.",
-    },
-    {
-      title: "Optional Resident Protection",
-      body:
-        "Optional $10,000 in personal property coverage for residents’ belongings and temporary relocation expenses.",
-    },
-    {
-      title: "Verification & Monitoring",
-      body:
-        "Optional verification and monitoring services help ensure coverage remains active and compliant throughout the lease term.",
-    },
-  ];
+<body class="min-h-screen bg-white text-slate-900">
 
-  const nextSteps = [
-    {
-      step: "01",
-      title: "Portfolio Review",
-      body:
-        "We begin with a strategic review of your property portfolio and leasing workflows. This upfront underwriting process is designed to align coverage needs and lease requirements before launch.",
-    },
-    {
-      step: "02",
-      title: "Onboarding & Setup",
-      body:
-        "If approved, your team is guided through system setup, staff training, and workflow configuration for automation and easy compliance tracking.",
-    },
-    {
-      step: "03",
-      title: "Ongoing Program Management",
-      body:
-        "After go-live, LeaseGuard supports compliance oversight, resident coordination, and continued program optimization.",
-    },
-  ];
+<!-- HERO -->
+<section class="relative overflow-hidden text-white"
+  style="background: linear-gradient(135deg,#0B2454 0%,#15356F 58%,#214A8A 100%)">
 
-  const benefits = [
-    "Reduce uninsured exposure",
-    "Support full lease compliance",
-    "Automate compliance tracking",
-    "Enhance operational efficiency",
-  ];
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full border border-white"></div>
+    <div class="absolute top-10 right-12 h-40 w-40 rotate-12 rounded-3xl border border-white"></div>
+  </div>
 
-  const heroBgStyle = {
-    background: `linear-gradient(135deg, ${colors.navy} 0%, ${colors.navySoft} 58%, #214A8A 100%)`,
-  };
-
-  const finalCtaStyle = {
-    background: `linear-gradient(135deg, ${colors.navy} 0%, ${colors.navySoft} 100%)`,
-  };
-
-  return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <section className="relative overflow-hidden" style={heroBgStyle}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full border border-white" />
-          <div className="absolute top-10 right-12 h-40 w-40 rotate-12 rounded-3xl border border-white" />
-          <div className="absolute bottom-0 left-1/3 h-64 w-64 -translate-x-1/2 rounded-full border border-white" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 py-6 lg:px-10">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div
-                className="text-3xl font-black text-white md:text-4xl"
-                style={{ letterSpacing: "0.2em" }}
-              >
-                LEASEGUARD
-              </div>
-            </div>
-
-            <div className="hidden rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 md:block">
-              LeasePro Post-Application
-            </div>
-          </div>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-8 lg:px-10 lg:pb-24 lg:pt-10">
-          <div
-            className="grid items-center gap-12"
-            style={{ gridTemplateColumns: "repeat(1, minmax(0, 1fr))" }}
-          >
-            <style>
-              {`
-                @media (min-width: 1024px) {
-                  .leasepro-hero-grid {
-                    grid-template-columns: 1.15fr 0.85fr;
-                  }
-                }
-                @media (min-width: 1024px) {
-                  .leasepro-benefits-grid {
-                    grid-template-columns: 1fr 0.95fr;
-                  }
-                }
-                @media (min-width: 1024px) {
-                  .leasepro-cta-grid {
-                    grid-template-columns: 1.15fr 0.85fr;
-                  }
-                }
-              `}
-            </style>
-
-            <div className="leasepro-hero-grid grid items-center gap-12">
-              <div>
-                <div
-                  className="mb-6 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold"
-                  style={{
-                    backgroundColor: "rgba(224,179,35,0.14)",
-                    color: "#FFF4C7",
-                    border: "1px solid rgba(224,179,35,0.35)",
-                  }}
-                >
-                  Application received for portfolio review
-                </div>
-
-                <h1 className="max-w-4xl text-4xl font-black leading-tight text-white md:text-6xl">
-                  Your LeasePro application is under{" "}
-                  <span className="whitespace-nowrap">review.</span>
-                </h1>
-
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-white/90 md:text-xl">
-                  Thank you for applying to partner with LeaseGuard. Your
-                  portfolio is now being reviewed to determine alignment with
-                  LeasePro, a tenant legal liability program designed to help
-                  property owners and managers protect against unit-level
-                  property damage caused during{" "}
-                  <span className="whitespace-nowrap">occupancy.</span>
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="#next-steps"
-                    className="rounded-2xl px-6 py-3 text-sm font-bold shadow-lg transition hover:-translate-y-0.5"
-                    style={{
-                      backgroundColor: colors.gold,
-                      color: colors.navy,
-                    }}
-                  >
-                    See what happens next
-                  </a>
-
-                  <a
-                    href="#leasepro-overview"
-                    className="rounded-2xl border px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
-                    style={{
-                      borderColor: "rgba(255,255,255,0.28)",
-                    }}
-                  >
-                    Review LeasePro
-                  </a>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="rounded-[2rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
-                  <div className="rounded-[1.5rem] bg-white p-7 shadow-2xl">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p
-                          className="text-sm font-semibold uppercase"
-                          style={{
-                            color: colors.navySoft,
-                            letterSpacing: "0.18em",
-                          }}
-                        >
-                          Review Status
-                        </p>
-
-                        <h2
-                          className="mt-2 text-2xl font-black"
-                          style={{ color: colors.navy }}
-                        >
-                          In Evaluation
-                        </h2>
-                      </div>
-
-                      <div
-                        className="flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black"
-                        style={{
-                          backgroundColor: colors.mist,
-                          color: colors.navy,
-                        }}
-                      >
-                        ✓
-                      </div>
-                    </div>
-
-                    <div className="mt-8 space-y-4">
-                      {[
-                        "Strategic review of your property portfolio",
-                        "Leasing workflow and compliance alignment",
-                        "Coverage fit and implementation readiness",
-                      ].map((item) => (
-                        <div key={item} className="flex items-start gap-3">
-                          <div
-                            className="mt-1 h-2.5 w-2.5 rounded-full"
-                            style={{ backgroundColor: colors.gold }}
-                          />
-                          <p
-                            className="text-sm leading-6"
-                            style={{ color: colors.text }}
-                          >
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div
-                      className="mt-8 rounded-2xl p-4"
-                      style={{
-                        backgroundColor: colors.mist,
-                        border: `1px solid ${colors.border}`,
-                      }}
-                    >
-                      <p
-                        className="text-sm font-semibold"
-                        style={{ color: colors.navy }}
-                      >
-                        Built for property professionals
-                      </p>
-                      <p
-                        className="mt-2 text-sm leading-6"
-                        style={{ color: colors.muted }}
-                      >
-                        LeaseGuard helps reduce financial exposure, maintain
-                        consistent coverage, and boost operational efficiency
-                        while enhancing the resident experience.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="leasepro-overview" className="relative -mt-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div
-            className="rounded-[2rem] border bg-white p-8 lg:p-10"
-            style={{
-              borderColor: colors.border,
-              boxShadow: "0 18px 60px rgba(11,36,84,0.08)",
-            }}
-          >
-            <div className="max-w-3xl">
-              <p
-                className="text-sm font-bold uppercase"
-                style={{
-                  color: colors.gold,
-                  letterSpacing: "0.18em",
-                }}
-              >
-                LeasePro
-              </p>
-
-              <h2
-                className="mt-3 text-3xl font-black md:text-4xl"
-                style={{ color: colors.navy }}
-              >
-                What your application is being{" "}
-                <span className="whitespace-nowrap">reviewed for</span>
-              </h2>
-
-              <p
-                className="mt-4 text-base leading-8"
-                style={{ color: colors.muted }}
-              >
-                LeasePro offers scalable tenant legal liability protection
-                designed to reduce uninsured exposure and support full{" "}
-                <span className="whitespace-nowrap">lease compliance.</span>
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {cards.map((card) => (
-                <div
-                  key={card.title}
-                  className="rounded-[1.5rem] p-6"
-                  style={{
-                    backgroundColor: colors.mist,
-                    border: `1px solid ${colors.border}`,
-                  }}
-                >
-                  <h3
-                    className="text-xl font-black"
-                    style={{ color: colors.navy }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    className="mt-3 text-sm leading-7"
-                    style={{ color: colors.text }}
-                  >
-                    {card.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="next-steps"
-        className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24"
-      >
-        <div className="max-w-3xl">
-          <p
-            className="text-sm font-bold uppercase"
-            style={{
-              color: colors.gold,
-              letterSpacing: "0.18em",
-            }}
-          >
-            Next steps
-          </p>
-
-          <h2
-            className="mt-3 text-3xl font-black md:text-5xl"
-            style={{ color: colors.navy }}
-          >
-            A short, structured{" "}
-            <span className="whitespace-nowrap">review process.</span>
-          </h2>
-
-          <p
-            className="mt-5 text-base leading-8"
-            style={{ color: colors.muted }}
-          >
-            LeaseGuard’s streamlined process is designed to ensure minimal
-            disruption to your team while delivering a clean path from evaluation
-            to <span className="whitespace-nowrap">launch.</span>
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {nextSteps.map((item) => (
-            <div
-              key={item.step}
-              className="relative overflow-hidden rounded-[1.75rem] border bg-white p-7"
-              style={{
-                borderColor: colors.border,
-                boxShadow: "0 16px 48px rgba(11,36,84,0.06)",
-              }}
-            >
-              <div
-                className="absolute right-0 top-0 rounded-bl-[1.5rem] px-5 py-3 text-sm font-black"
-                style={{
-                  backgroundColor: colors.navy,
-                  color: colors.white,
-                }}
-              >
-                {item.step}
-              </div>
-
-              <h3
-                className="pr-16 text-2xl font-black"
-                style={{ color: colors.navy }}
-              >
-                {item.title}
-              </h3>
-
-              <p
-                className="mt-4 text-sm leading-7"
-                style={{ color: colors.text }}
-              >
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: colors.mist }}>
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-          <div className="leasepro-benefits-grid grid gap-10 lg:items-center">
-            <div>
-              <p
-                className="text-sm font-bold uppercase"
-                style={{
-                  color: colors.gold,
-                  letterSpacing: "0.18em",
-                }}
-              >
-                Why partners choose LeaseGuard
-              </p>
-
-              <h2
-                className="mt-3 text-3xl font-black md:text-4xl"
-                style={{ color: colors.navy }}
-              >
-                Modern insurance-backed lease protection and compliance{" "}
-                <span className="whitespace-nowrap">tools.</span>
-              </h2>
-
-              <p
-                className="mt-5 text-base leading-8"
-                style={{ color: colors.muted }}
-              >
-                LeaseGuard helps increase resident compliance and safeguard
-                properties from uninsured risk. The platform is built for
-                property professionals and is designed to reduce financial
-                exposure, maintain consistent coverage, and improve{" "}
-                <span className="whitespace-nowrap">
-                  operational efficiency.
-                </span>
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <div
-                  key={benefit}
-                  className="rounded-[1.4rem] border bg-white p-5"
-                  style={{ borderColor: colors.border }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className="mt-1 flex h-7 w-7 items-center justify-center rounded-full text-sm font-black"
-                      style={{
-                        backgroundColor: colors.gold,
-                        color: colors.navy,
-                      }}
-                    >
-                      ✓
-                    </div>
-
-                    <p
-                      className="text-sm font-semibold leading-6"
-                      style={{ color: colors.text }}
-                    >
-                      {benefit}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div
-          className="overflow-hidden rounded-[2rem]"
-          style={finalCtaStyle}
-        >
-          <div className="leasepro-cta-grid grid gap-8 px-8 py-10 lg:px-12 lg:py-12">
-            <div>
-              <p
-                className="text-sm font-bold uppercase text-white/70"
-                style={{ letterSpacing: "0.18em" }}
-              >
-                Pending review
-              </p>
-
-              <h2 className="mt-3 text-3xl font-black text-white md:text-4xl">
-                We’re reviewing your portfolio for{" "}
-                <span className="whitespace-nowrap">LeasePro fit.</span>
-              </h2>
-
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/85">
-                If your portfolio is approved, LeaseGuard will guide your team
-                through onboarding, system setup, and program launch with
-                dedicated support from{" "}
-                <span className="whitespace-nowrap">day one.</span>
-              </p>
-            </div>
-
-            <div className="rounded-[1.5rem] bg-white p-6">
-              <h3
-                className="text-xl font-black"
-                style={{ color: colors.navy }}
-              >
-                Review focus
-              </h3>
-
-              <div className="mt-5 space-y-4">
-                {[
-                  "Property portfolio and operational fit",
-                  "Lease requirements and compliance structure",
-                  "Coverage alignment and rollout readiness",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <div
-                      className="mt-1 h-2.5 w-2.5 rounded-full"
-                      style={{ backgroundColor: colors.gold }}
-                    />
-                    <p
-                      className="text-sm leading-6"
-                      style={{ color: colors.text }}
-                    >
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="mt-6 w-full rounded-2xl px-5 py-3 text-sm font-bold"
-                style={{
-                  backgroundColor: colors.navy,
-                  color: colors.white,
-                }}
-                type="button"
-              >
-                Thank you for applying
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="text-3xl font-black text-white" style="letter-spacing:.2em;">
+      LEASEGUARD
     </div>
-  );
-}
+
+    <div class="hidden md:block text-sm border border-white/20 bg-white/10 px-4 py-2 rounded-full">
+      LeasePro Post-Application
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 pb-20 pt-8">
+    <div class="grid gap-12 hero-grid">
+
+      <!-- LEFT -->
+      <div>
+        <div class="mb-6 inline-flex px-4 py-2 text-sm font-semibold rounded-full"
+          style="background:rgba(224,179,35,.14);border:1px solid rgba(224,179,35,.35);color:#FFF4C7;">
+          Application received for portfolio review
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">
+          Your LeasePro application is under review.
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl">
+          Your portfolio is being reviewed to determine alignment with LeasePro, a tenant legal liability program designed to protect against unit-level property damage during occupancy.
+        </p>
+
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <a href="#next" class="px-6 py-3 rounded-xl font-bold"
+             style="background:#E0B323;color:#0B2454;">
+            See what happens next
+          </a>
+
+          <a href="#overview" class="px-6 py-3 rounded-xl font-bold border border-white/30">
+            Review LeasePro
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-white rounded-2xl p-7 shadow-xl text-[#0B2454]">
+
+        <p class="text-sm font-semibold uppercase tracking-[0.18em]">
+          Review Status
+        </p>
+
+        <h2 class="text-2xl font-black mt-2">In Evaluation</h2>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <div>• Strategic portfolio review</div>
+          <div>• Workflow alignment</div>
+          <div>• Coverage fit</div>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-gray-100 text-sm">
+          Built for property professionals to reduce risk and improve efficiency.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="max-w-7xl mx-auto px-6 -mt-10">
+  <div class="bg-white rounded-2xl shadow-lg p-8 border">
+
+    <h2 class="text-3xl font-black text-[#0B2454]">
+      What your application is being reviewed for
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+      <div class="p-5 bg-gray-100 rounded-xl">
+        <h3 class="font-bold text-lg">Tenant Legal Liability</h3>
+        <p class="text-sm mt-2">Protects against tenant-caused damage.</p>
+      </div>
+
+      <div class="p-5 bg-gray-100 rounded-xl">
+        <h3 class="font-bold text-lg">Flexible Coverage</h3>
+        <p class="text-sm mt-2">$100K–$300K coverage options.</p>
+      </div>
+
+      <div class="p-5 bg-gray-100 rounded-xl">
+        <h3 class="font-bold text-lg">Resident Protection</h3>
+        <p class="text-sm mt-2">$10K optional contents coverage.</p>
+      </div>
+
+      <div class="p-5 bg-gray-100 rounded-xl">
+        <h3 class="font-bold text-lg">Monitoring</h3>
+        <p class="text-sm mt-2">Ensures ongoing compliance.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section id="next" class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="text-4xl font-black text-[#0B2454]">
+    A short, structured review process
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6 mt-10">
+
+    <div class="border rounded-xl p-6">
+      <h3 class="font-black text-xl">01 Portfolio Review</h3>
+      <p class="text-sm mt-2">Strategic review of portfolio and workflows.</p>
+    </div>
+
+    <div class="border rounded-xl p-6">
+      <h3 class="font-black text-xl">02 Onboarding</h3>
+      <p class="text-sm mt-2">Setup and training.</p>
+    </div>
+
+    <div class="border rounded-xl p-6">
+      <h3 class="font-black text-xl">03 Management</h3>
+      <p class="text-sm mt-2">Ongoing compliance support.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 benefits-grid grid gap-10">
+
+    <div>
+      <h2 class="text-3xl font-black text-[#0B2454]">
+        Why partners choose LeaseGuard
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded-xl border">✓ Reduce exposure</div>
+      <div class="bg-white p-4 rounded-xl border">✓ Compliance</div>
+      <div class="bg-white p-4 rounded-xl border">✓ Automation</div>
+      <div class="bg-white p-4 rounded-xl border">✓ Efficiency</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="text-white py-16"
+  style="background:linear-gradient(135deg,#0B2454,#15356F);">
+
+  <div class="max-w-7xl mx-auto px-6 cta-grid grid gap-10">
+
+    <div>
+      <h2 class="text-3xl font-black">
+        We’re reviewing your portfolio for LeasePro fit
+      </h2>
+    </div>
+
+    <div class="bg-white text-[#0B2454] p-6 rounded-xl">
+      <h3 class="font-black">Review focus</h3>
+      <div class="mt-4 text-sm space-y-2">
+        <div>• Portfolio fit</div>
+        <div>• Compliance</div>
+        <div>• Coverage alignment</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
